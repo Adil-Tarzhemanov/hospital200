@@ -1,0 +1,213 @@
+
+
+
+### demo-gov/index.html — разметка
+<!-- ===================== ГОСЗАКУПКИ: ТАБЛИЦА ===================== -->
+<section class="section" id="procurement">
+  <div class="wrap">
+    <h2 class="h2">
+      <span data-kk="Мемлекеттік сатып алулар">Государственные закупки</span>
+      <a class="h2__all" href="mailto:zakup-gb1@mail.ru">zakup-gb1@mail.ru</a>
+    </h2>
+
+    <div class="filters" role="group" aria-label="Фильтр по годам">
+      <button type="button" data-year="all" aria-pressed="true" data-kk="Барлық жылдар">Все годы</button>
+      <button type="button" data-year="2025" aria-pressed="false">2025</button>
+      <button type="button" data-year="2024" aria-pressed="false">2024</button>
+      <button type="button" data-year="2021" aria-pressed="false">2021</button>
+    </div>
+    <p class="filecount" id="registryCount" role="status"></p>
+
+    <div class="tablewrap">
+      <table>
+        <caption data-kk="Хабарландырулар, хаттамалар және тендерлер — бір тізілімде. Ескі сайтта олар ай сайынғы 209 бетке бөлінген.">Объявления, протоколы и тендеры в одном реестре. На старом сайте они разнесены по 209 страницам-месяцам.</caption>
+        <thead>
+          <tr>
+            <th style="width:132px" data-kk="Түрі">Вид</th>
+            <th data-kk="Атауы">Наименование</th>
+            <th style="width:120px" data-kk="Күні">Дата</th>
+            <th style="width:130px" data-kk="Құжат">Документ</th>
+          </tr>
+        </thead>
+        <tbody id="registry">
+          <tr data-y="2025">
+            <td data-kk="Хабарландыру">Объявление</td>
+            <td data-kk="Электрохирургиялық блокқа қос педаль. Жоспарлы баға 985 000 ₸, өтінімдер 16.01.2025 дейін">Двойная педаль к электрохирургическому блоку. Планируемая цена 985 000 ₸, приём заявок до 16.01.2025</td>
+            <td class="num">09.01.2025</td>
+            <td><a href="https://karhospital.kz/index.php/info/obyavleniya-gz/2025/yanvar-2025" data-kk="Ашу">Открыть</a></td>
+          </tr>
+          <tr data-y="2025">
+            <td data-kk="Хабарландыру">Объявление</td>
+            <td data-kk="Тексеру сақинасы (нығайту), титан қорытпасы. Жоспарлы баға 191 400 ₸">Кольцо ревизионное (укрепляющее), титановый сплав. Планируемая цена 191 400 ₸</td>
+            <td class="num">09.01.2025</td>
+            <td><a href="https://karhospital.kz/index.php/info/obyavleniya-gz/2025/yanvar-2025" data-kk="Ашу">Открыть</a></td>
+          </tr>
+          <tr data-y="2024">
+            <td data-kk="Тендер">Тендер</td>
+            <td data-kk="Медициналық бұйымдарды сатып алу қорытындылары. № 8 хаттама">Итоги закупа медицинских изделий. Протокол № 8</td>
+            <td class="num">31.10.2024</td>
+            <td><a href="https://karhospital.kz/images/tender2024/08__31102024.pdf">PDF</a></td>
+          </tr>
+          <tr data-y="2024">
+            <td data-kk="Тендер">Тендер</td>
+            <td data-kk="Медициналық бұйымдарды сатып алу қорытындылары. № 7 хаттама">Итоги закупа медицинских изделий. Протокол № 7</td>
+            <td class="num">10.10.2024</td>
+            <td><a href="https://karhospital.kz/images/tender2024/07__10102024.pdf">PDF</a></td>
+          </tr>
+          <tr data-y="2021">
+            <td data-kk="Хаттама">Протокол</td>
+            <td data-kk="№ 65.1 хаттама">Протокол № 65.1</td>
+            <td class="num">21.12.2021</td>
+            <td><a href="https://karhospital.kz/images/p2021/65-1__21122021.pdf">PDF</a></td>
+          </tr>
+          <tr data-y="2021">
+            <td data-kk="Хаттама">Протокол</td>
+            <td data-kk="№ 65 хаттама">Протокол № 65</td>
+            <td class="num">20.12.2021</td>
+            <td><a href="https://karhospital.kz/images/p2021/65__20122021.pdf">PDF</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tablenote" data-kk="Барлық жазбалар — нақты сатып алулар, сілтемелер ескі сайттағы сол PDF-файлдарға апарады. Мұрағатта 1084 файл.">Все записи настоящие, ссылки ведут на те же PDF старого сайта. Всего в архиве 1084 файла.</p>
+  </div>
+</section>
+
+
+### demo-gov/index.html — стили
+/* Фильтр закупок */
+.filters { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 14px; border: 1px solid var(--line); width: max-content; max-width: 100%; }
+.filters button { font: inherit; font-weight: 700; font-size: .875rem; background: #fff; color: var(--ink-2); border: 0; padding: 9px 18px; min-height: 40px; cursor: pointer; }
+.filters button + button { border-left: 1px solid var(--line); }
+.filters button[aria-pressed="true"] { background: var(--blue-deep); color: #fff; }
+.filecount { font-size: .8125rem; color: var(--muted); margin-bottom: 10px; min-height: 1.3em; }
+
+
+
+
+### demo-gov/index.html — обработчик
+
+    /* ---------- Фильтр реестра закупок ----------
+       Работает на месте; на боевом сайте выборку отдаёт CMS. */
+    var yearBtn = t.closest("[data-year]");
+    if (yearBtn) {
+      var year = yearBtn.getAttribute("data-year");
+      var rows = document.querySelectorAll("#registry tr");
+      var shown = 0;
+      for (var r = 0; r < rows.length; r++) {
+        var fit = year === "all" || rows[r].getAttribute("data-y") === year;
+        rows[r].hidden = !fit;
+        if (fit) shown++;
+      }
+      press("[data-year]", yearBtn);
+      document.getElementById("registryCount").textContent =
+        (root.getAttribute("lang") === "kk" ? "Табылды: " : "Найдено записей: ") + shown;
+      return;
+    }
+
+
+### demo-modern/index.html — разметка
+<!-- ============================== ЗАКУПКИ ============================== -->
+<section class="sec" id="procurement">
+  <div class="wrap">
+    <div class="sec__head">
+      <div>
+        <h2 data-kk="Сатып алулар">Закупки</h2>
+        <p data-kk="Хабарландырулар, хаттамалар және тендерлер — бір тізілімде, ай сайынғы 209 бет емес.">Объявления, протоколы и тендеры в одном реестре вместо 209 страниц по месяцам.</p>
+      </div>
+      <a href="mailto:zakup-gb1@mail.ru">zakup-gb1@mail.ru</a>
+    </div>
+
+    <div class="filters" role="group" aria-label="Фильтр по годам">
+      <button class="fchip" type="button" data-year="all" aria-pressed="true" data-kk="Барлық жылдар">Все годы</button>
+      <button class="fchip" type="button" data-year="2025" aria-pressed="false">2025</button>
+      <button class="fchip" type="button" data-year="2024" aria-pressed="false">2024</button>
+      <button class="fchip" type="button" data-year="2021" aria-pressed="false">2021</button>
+    </div>
+    <p class="fcount" id="registryCount" role="status"></p>
+
+    <ul class="tenders" id="registry">
+      <li class="tender" data-y="2025">
+        <span><span class="tag" data-kk="Хабарландыру">Объявление</span></span>
+        <span class="tender__n" data-kk="Электрохирургиялық блокқа қос педаль<span class='tender__m'>Жоспарлы баға 985 000 ₸ · өтінімдер 16.01.2025 дейін</span>">Двойная педаль к электрохирургическому блоку<span class="tender__m">Планируемая цена 985 000 ₸ · приём заявок до 16.01.2025</span></span>
+        <span class="tender__d">09.01.2025</span>
+        <a class="tender__f" href="https://karhospital.kz/index.php/info/obyavleniya-gz/2025/yanvar-2025" data-kk="Ашу">Открыть</a>
+      </li>
+      <li class="tender" data-y="2025">
+        <span><span class="tag" data-kk="Хабарландыру">Объявление</span></span>
+        <span class="tender__n" data-kk="Тексеру сақинасы (нығайту), титан қорытпасы<span class='tender__m'>Жоспарлы баға 191 400 ₸ · өтінімдер 16.01.2025 дейін</span>">Кольцо ревизионное (укрепляющее), титановый сплав<span class="tender__m">Планируемая цена 191 400 ₸ · приём заявок до 16.01.2025</span></span>
+        <span class="tender__d">09.01.2025</span>
+        <a class="tender__f" href="https://karhospital.kz/index.php/info/obyavleniya-gz/2025/yanvar-2025" data-kk="Ашу">Открыть</a>
+      </li>
+      <li class="tender" data-y="2024">
+        <span><span class="tag tag--tender" data-kk="Тендер">Тендер</span></span>
+        <span class="tender__n" data-kk="Медициналық бұйымдарды сатып алу қорытындылары. № 8 хаттама">Итоги закупа медицинских изделий. Протокол № 8</span>
+        <span class="tender__d">31.10.2024</span>
+        <a class="tender__f" href="https://karhospital.kz/images/tender2024/08__31102024.pdf">PDF</a>
+      </li>
+      <li class="tender" data-y="2024">
+        <span><span class="tag tag--tender" data-kk="Тендер">Тендер</span></span>
+        <span class="tender__n" data-kk="Медициналық бұйымдарды сатып алу қорытындылары. № 7 хаттама">Итоги закупа медицинских изделий. Протокол № 7</span>
+        <span class="tender__d">10.10.2024</span>
+        <a class="tender__f" href="https://karhospital.kz/images/tender2024/07__10102024.pdf">PDF</a>
+      </li>
+      <li class="tender" data-y="2021">
+        <span><span class="tag tag--proto" data-kk="Хаттама">Протокол</span></span>
+        <span class="tender__n" data-kk="№ 65.1 хаттама">Протокол № 65.1</span>
+        <span class="tender__d">21.12.2021</span>
+        <a class="tender__f" href="https://karhospital.kz/images/p2021/65-1__21122021.pdf">PDF</a>
+      </li>
+      <li class="tender" data-y="2021">
+        <span><span class="tag tag--proto" data-kk="Хаттама">Протокол</span></span>
+        <span class="tender__n" data-kk="№ 65 хаттама">Протокол № 65</span>
+        <span class="tender__d">20.12.2021</span>
+        <a class="tender__f" href="https://karhospital.kz/images/p2021/65__20122021.pdf">PDF</a>
+      </li>
+    </ul>
+
+    <p class="note" data-kk="Барлық жазбалар нақты, сілтемелер ескі сайттағы сол PDF-файлдарға апарады. Мұрағатта 1084 файл.">Все записи настоящие, ссылки ведут на те же PDF старого сайта. Всего в архиве 1084 файла.</p>
+  </div>
+</section>
+
+
+### demo-modern/index.html — стили
+/* Закупки */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.fchip { font: inherit; font-size: .875rem; font-weight: 700; background: var(--surface); color: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 8px 18px; min-height: 40px; cursor: pointer; }
+.fchip:hover { border-color: var(--aqua); color: var(--aqua-deep); }
+.fchip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--ground); }
+.fcount { font-size: .8125rem; color: var(--muted); margin-top: 12px; min-height: 1.3em; }
+
+.tenders { display: grid; gap: 10px; margin-top: 6px; }
+.tender { background: var(--surface); border-radius: var(--r-sm); padding: 18px 22px; display: grid; grid-template-columns: 116px minmax(0, 1fr) 108px 112px; gap: 18px; align-items: center; box-shadow: var(--shadow-sm); }
+.tender[hidden] { display: none; }
+.tag { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--r-pill); background: var(--aqua-wash); color: var(--aqua-deep); }
+.tag--proto { background: var(--surface-2); color: var(--ink-2); }
+.tag--tender { background: var(--ember-wash); color: var(--ember); }
+.tender__n { font-weight: 700; }
+.tender__m { display: block; font-weight: 500; font-size: .8125rem; color: var(--muted); margin-top: 3px; }
+.tender__d { font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tender__f { justify-self: end; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .875rem; text-decoration: none; }
+.tender__f:hover { text-decoration: underline; }
+
+
+
+
+### demo-modern/index.html — обработчик
+
+    /* ---------- Фильтр закупок ---------- */
+    var yearBtn = t.closest("[data-year]");
+    if (yearBtn) {
+      var year = yearBtn.getAttribute("data-year");
+      var rows = document.querySelectorAll("#registry .tender");
+      var shown = 0;
+      for (var r = 0; r < rows.length; r++) {
+        var fit = year === "all" || rows[r].getAttribute("data-y") === year;
+        rows[r].hidden = !fit;
+        if (fit) shown++;
+      }
+      press("[data-year]", yearBtn);
+      document.getElementById("registryCount").textContent =
+        (root.getAttribute("lang") === "kk" ? "Табылды: " : "Найдено записей: ") + shown;
+      return;
+    }

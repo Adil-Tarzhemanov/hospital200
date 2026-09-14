@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Больница № 1 Караганды — варианты дизайна</title>
+<meta name="theme-color" content="#17171B">
+<link rel="icon" href="demo/assets/emblem.png" type="image/png">
+
+<style>
+/* Страница выбора. Ничего, кроме трёх вариантов: решение принимается
+   глазами, подписи тут только мешали бы. Номер оставлен, чтобы на
+   вариант можно было сослаться в разговоре. */
+:root { --bg: #17171B; --card: #1F1F25; --line: #33333D; --accent: #9BB4FF; --muted: #6E6E7A; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; min-height: 100dvh;
+  background: var(--bg);
+  display: grid; align-content: center;
+  padding: 28px 22px;
+  font: 600 13px/1.4 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+.grid {
+  width: 100%; max-width: 1180px; margin-inline: auto;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;
+}
+
+.pick {
+  position: relative; display: block;
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  background: var(--card); text-decoration: none;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.pick:hover, .pick:focus-visible { border-color: var(--accent); transform: translateY(-4px); }
+.pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.pick svg { display: block; width: 100%; height: auto; }
+
+.pick b {
+  position: absolute; left: 14px; top: 14px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(23,23,27,.72); color: #fff;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+@supports not (backdrop-filter: blur(2px)) { .pick b { background: #17171B; } }
+
+@media (prefers-reduced-motion: reduce) { .pick { transition: border-color 200ms ease; } .pick:hover { transform: none; } }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; max-width: 520px; } }
+</style>
+</head>
+<body>
+
+<main class="grid">
+
+  <a class="pick" href="demo/index.html" aria-label="Вариант 1">
+    <b aria-hidden="true">1</b>
+    <svg viewBox="0 0 360 200" role="presentation">
+      <rect width="360" height="200" fill="#F4F2F6"/>
+      <rect width="360" height="14" fill="#431657"/>
+      <rect y="14" width="360" height="26" fill="#FFF"/>
+      <circle cx="26" cy="27" r="8" fill="#431657"/>
+      <rect x="42" y="22" width="96" height="5" rx="2.5" fill="#1E1424"/>
+      <rect x="42" y="31" width="62" height="4" rx="2" fill="#655A6D"/>
+      <rect x="278" y="21" width="58" height="11" rx="2" fill="#EDE9F0"/>
+      <rect y="40" width="360" height="10" fill="#FFF"/>
+      <rect x="20" y="43" width="150" height="4" rx="2" fill="#453B4C"/>
+      <rect x="20" y="66" width="120" height="9" rx="3" fill="#1E1424"/>
+      <rect x="20" y="81" width="164" height="9" rx="3" fill="#1E1424"/>
+      <rect x="20" y="98" width="140" height="4" rx="2" fill="#655A6D"/>
+      <rect x="20" y="106" width="116" height="4" rx="2" fill="#655A6D"/>
+      <rect x="20" y="120" width="66" height="14" rx="7" fill="#431657"/>
+      <rect x="92" y="120" width="60" height="14" rx="7" fill="none" stroke="#8B7F93"/>
+      <rect x="212" y="62" width="128" height="62" rx="4" fill="#FFF" stroke="#DCD6E1"/>
+      <rect x="212" y="62" width="128" height="3" fill="#431657"/>
+      <rect x="222" y="76" width="60" height="5" rx="2.5" fill="#1E1424"/>
+      <rect x="222" y="88" width="108" height="12" rx="6" fill="#431657"/>
+      <rect x="222" y="105" width="108" height="10" rx="5" fill="none" stroke="#DCD6E1"/>
+      <rect x="212" y="130" width="128" height="30" rx="4" fill="#FFF" stroke="#DCD6E1"/>
+      <rect x="212" y="130" width="3" height="30" fill="#C2261B"/>
+      <rect x="222" y="140" width="50" height="4" rx="2" fill="#A81F16"/>
+      <rect x="222" y="149" width="80" height="4" rx="2" fill="#655A6D"/>
+      <g fill="#FFF" stroke="#DCD6E1">
+        <rect x="20" y="152" width="58" height="34" rx="4"/>
+        <rect x="86" y="152" width="58" height="34" rx="4"/>
+        <rect x="152" y="152" width="44" height="34" rx="4"/>
+      </g>
+    </svg>
+  </a>
+
+  <a class="pick" href="demo-gov/index.html" aria-label="Вариант 2">
+    <b aria-hidden="true">2</b>
+    <svg viewBox="0 0 360 200" role="presentation">
+      <rect width="360" height="200" fill="#FFFFFF"/>
+      <rect width="360" height="12" fill="#123563"/>
+      <rect y="12" width="360" height="28" fill="#FFF"/>
+      <rect x="18" y="18" width="16" height="16" fill="#123563"/>
+      <rect x="40" y="19" width="118" height="5" fill="#16181C"/>
+      <rect x="40" y="28" width="80" height="4" fill="#5F6672"/>
+      <rect x="264" y="18" width="78" height="16" fill="#F4F6F9" stroke="#C9D0DA"/>
+      <rect y="40" width="360" height="3" fill="#C8A24A"/>
+      <rect y="43" width="360" height="14" fill="#123563"/>
+      <rect x="18" y="48" width="34" height="4" fill="#E4ECF6"/>
+      <rect x="60" y="48" width="42" height="4" fill="#E4ECF6"/>
+      <rect x="110" y="48" width="30" height="4" fill="#E4ECF6"/>
+      <rect x="148" y="48" width="52" height="4" fill="#E4ECF6"/>
+      <rect y="57" width="360" height="9" fill="#F4F6F9"/>
+      <rect x="18" y="60" width="34" height="3" fill="#5F6672"/>
+      <rect x="18" y="74" width="228" height="16" fill="#EAF0F7" stroke="#C9D0DA"/>
+      <rect x="18" y="74" width="3" height="16" fill="#1B4D8F"/>
+      <rect x="28" y="79" width="120" height="5" fill="#16181C"/>
+      <rect x="18" y="98" width="90" height="5" fill="#16181C"/>
+      <rect x="18" y="105" width="228" height="2" fill="#1B4D8F"/>
+      <rect x="18" y="114" width="40" height="26" fill="#EAF0F7" stroke="#C9D0DA"/>
+      <rect x="64" y="116" width="150" height="4" fill="#16181C"/>
+      <rect x="64" y="124" width="182" height="3" fill="#5F6672"/>
+      <rect x="64" y="131" width="160" height="3" fill="#5F6672"/>
+      <rect x="18" y="148" width="40" height="26" fill="#EAF0F7" stroke="#C9D0DA"/>
+      <rect x="64" y="150" width="136" height="4" fill="#16181C"/>
+      <rect x="64" y="158" width="182" height="3" fill="#5F6672"/>
+      <rect x="64" y="165" width="150" height="3" fill="#5F6672"/>
+      <rect x="258" y="98" width="84" height="40" fill="#FFF" stroke="#C9D0DA"/>
+      <rect x="258" y="98" width="84" height="10" fill="#123563"/>
+      <rect x="264" y="114" width="62" height="3" fill="#1B4D8F"/>
+      <rect x="264" y="122" width="54" height="3" fill="#1B4D8F"/>
+      <rect x="264" y="130" width="66" height="3" fill="#1B4D8F"/>
+      <rect x="258" y="146" width="84" height="30" fill="#FFF" stroke="#C9D0DA"/>
+      <rect x="258" y="146" width="84" height="10" fill="#B02418"/>
+      <rect x="264" y="162" width="70" height="3" fill="#3A3F47"/>
+      <rect x="264" y="169" width="56" height="3" fill="#3A3F47"/>
+    </svg>
+  </a>
+
+  <a class="pick" href="demo-modern/index.html" aria-label="Вариант 3">
+    <b aria-hidden="true">3</b>
+    <svg viewBox="0 0 360 200" role="presentation">
+      <rect width="360" height="200" fill="#F4F7F7"/>
+      <rect y="0" width="360" height="12" fill="#FFF"/>
+      <rect y="12" width="360" height="26" fill="#FFF"/>
+      <circle cx="26" cy="25" r="8" fill="#0E8F9E"/>
+      <rect x="40" y="20" width="58" height="5" rx="2.5" fill="#0C1D22"/>
+      <rect x="40" y="29" width="40" height="3" rx="1.5" fill="#5E7279"/>
+      <rect x="178" y="19" width="30" height="11" rx="5.5" fill="#EDF4F4"/>
+      <rect x="212" y="19" width="34" height="11" rx="5.5" fill="#E0F2F4"/>
+      <rect x="284" y="17" width="58" height="16" rx="8" fill="#0E8F9E"/>
+      <rect x="20" y="56" width="140" height="11" rx="5" fill="#0C1D22"/>
+      <rect x="20" y="72" width="104" height="11" rx="5" fill="#0C1D22"/>
+      <rect x="20" y="92" width="150" height="4" rx="2" fill="#5E7279"/>
+      <rect x="20" y="108" width="136" height="22" rx="11" fill="#FFF" stroke="#7E9397"/>
+      <circle cx="34" cy="119" r="4" fill="none" stroke="#5E7279"/>
+      <rect x="162" y="108" width="46" height="22" rx="11" fill="#0E8F9E"/>
+      <g fill="#FFF" stroke="#DCE6E7">
+        <rect x="20" y="138" width="36" height="13" rx="6.5"/>
+        <rect x="62" y="138" width="44" height="13" rx="6.5"/>
+        <rect x="112" y="138" width="38" height="13" rx="6.5"/>
+      </g>
+      <rect x="228" y="52" width="114" height="96" rx="14" fill="#FFF"/>
+      <rect x="262" y="62" width="46" height="34" rx="6" fill="#E0F2F4"/>
+      <rect x="240" y="104" width="60" height="5" rx="2.5" fill="#0C1D22"/>
+      <rect x="240" y="114" width="88" height="3" rx="1.5" fill="#5E7279"/>
+      <rect x="240" y="124" width="90" height="14" rx="7" fill="#0E8F9E"/>
+      <g fill="#FFF">
+        <rect x="20" y="162" width="100" height="30" rx="10"/>
+        <rect x="128" y="162" width="100" height="30" rx="10"/>
+        <rect x="236" y="162" width="106" height="30" rx="10"/>
+      </g>
+      <g fill="#E0F2F4">
+        <rect x="30" y="170" width="14" height="14" rx="5"/>
+        <rect x="138" y="170" width="14" height="14" rx="5"/>
+        <rect x="246" y="170" width="14" height="14" rx="5"/>
+      </g>
+    </svg>
+  </a>
+
+</main>
+
+</body>
+</html>

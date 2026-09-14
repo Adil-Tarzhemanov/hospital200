@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+<title>КГП «Многопрофильная больница № 1 города Караганды» — официальный сайт</title>
+<meta name="description" content="Официальный интернет-ресурс КГП «Многопрофильная больница № 1 города Караганды» управления здравоохранения Карагандинской области. Услуги, государственные закупки, противодействие коррупции, обращения граждан.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="КГП «Многопрофильная больница № 1 города Караганды»">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta name="theme-color" content="#123563">
+<link rel="icon" href="assets/emblem.png" type="image/png">
+
+<!-- PT Sans (ParaType). Эту гарнитуру ставят почти все государственные
+     и медицинские сайты Казахстана; подмножество cyrillic-ext несёт
+     казахские ә ғ қ ң ө ұ ү һ. В рабочей версии самохостится. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+/* ============================================================
+   ВАРИАНТ 2. СТРОГО ГОСУДАРСТВЕННЫЙ
+   Ориентир — единый шаблон gov.kz и то, как выглядят сайты
+   поликлиник Казахстана: официальный синий, прямые углы,
+   таблицы вместо карточек, ведомственные баннеры, 1414,
+   хлебные крошки и дата обновления страницы.
+   Никаких иллюстраций: только документы, таблицы и фотографии.
+   ============================================================ */
+
+:root {
+  --ground:    #FFFFFF;
+  --surface-2: #F4F6F9;
+  --surface-3: #EAF0F7;
+
+  --line:      #C9D0DA;
+  --line-soft: #E2E7EE;
+
+  --ink:   #16181C;
+  --ink-2: #3A3F47;
+  --muted: #5F6672;        /* 5.6:1 на белом */
+
+  --blue:      #1B4D8F;    /* 8.5:1 на белом */
+  --blue-deep: #123563;    /* шапка, меню, подвал */
+  --blue-wash: #EAF0F7;
+
+  /* Золото — только тонкая линейка под шапкой, как на гербовых бланках */
+  --gold: #C8A24A;
+
+  --red:      #B02418;     /* экстренные номера */
+  --red-wash: #FBECEA;
+
+  --font: "PT Sans", "Segoe UI", Tahoma, system-ui, Arial, sans-serif;
+
+  --fs: 1;
+  --wrap: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 16px; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: calc(16px * var(--fs));
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.22; margin: 0; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { color: var(--blue-deep); }
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; }
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: #fff; color: var(--blue-deep);
+  font-weight: 700; padding: 12px 20px; border: 2px solid var(--blue-deep);
+}
+.skip:focus { left: 8px; top: 8px; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
+
+/* ---------------- Верхняя государственная полоса ---------------- */
+.gosbar { background: var(--blue-deep); color: #DCE6F2; font-size: .8125rem; }
+.gosbar__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; min-height: 38px; padding-block: 5px; }
+.gosbar a { color: inherit; text-decoration: none; }
+.gosbar a:hover { text-decoration: underline; color: #fff; }
+.gosbar__spacer { flex: 1 1 auto; }
+.gosbar__flag { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.gosbar__flag i { width: 22px; height: 14px; background: #00AFCA; display: inline-block; position: relative; }
+.gosbar__flag i::after { content: ""; position: absolute; inset: 3px auto auto 3px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+.tool {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: inherit; color: inherit; cursor: pointer;
+  background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.22);
+  padding: 5px 11px; min-height: 30px;
+}
+.tool:hover { background: rgba(255,255,255,.2); }
+.tool[aria-pressed="true"] { background: #fff; color: var(--blue-deep); border-color: #fff; }
+
+.langs { display: inline-flex; border: 1px solid rgba(255,255,255,.3); }
+.langs button { font: inherit; font-weight: 700; color: inherit; background: transparent; border: 0; padding: 5px 12px; min-height: 30px; cursor: pointer; }
+.langs button + button { border-left: 1px solid rgba(255,255,255,.3); }
+.langs button[aria-pressed="true"] { background: #fff; color: var(--blue-deep); }
+
+/* ---------------- Панель слабовидящих ---------------- */
+.a11y-bar { display: none; background: #fff; border-bottom: 2px solid var(--line); }
+:root[data-a11y="on"] .a11y-bar { display: block; }
+.a11y-bar__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding-block: 12px; font-size: .9375rem; }
+.a11y-bar__group { display: flex; align-items: center; gap: 8px; }
+.a11y-bar__group > span { font-weight: 700; }
+.a11y-bar button { font: inherit; font-weight: 700; background: #fff; color: var(--ink); border: 1px solid var(--line); padding: 8px 16px; min-height: 40px; cursor: pointer; }
+.a11y-bar button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* ---------------- Шапка с эмблемой ---------------- */
+.head { border-bottom: 3px solid var(--gold); }
+.head__inner { display: flex; align-items: center; gap: 22px; padding-block: 18px; }
+.head__brand { display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; min-width: 0; }
+.head__brand img { width: 62px; height: 62px; flex: 0 0 auto; }
+.head__title { font-size: 1.125rem; font-weight: 700; line-height: 1.25; text-transform: uppercase; letter-spacing: .01em; }
+.head__parent { font-size: .8125rem; color: var(--muted); margin-top: 4px; }
+
+.head__aside { margin-left: auto; display: flex; align-items: stretch; gap: 16px; flex: 0 0 auto; }
+
+/* Единый контакт-центр — обязательный блок государственного сайта */
+.cc { border: 1px solid var(--line); border-left: 4px solid var(--blue); padding: 8px 16px; background: var(--surface-2); }
+.cc__label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.cc__num { font-size: 1.5rem; font-weight: 700; color: var(--blue-deep); font-variant-numeric: tabular-nums; line-height: 1.15; }
+.cc__num a { text-decoration: none; color: inherit; }
+
+.search { display: flex; }
+.search input { font: inherit; width: 190px; padding: 0 12px; min-height: 44px; border: 1px solid var(--line); border-right: 0; background: #fff; color: var(--ink); }
+.search input::placeholder { color: var(--muted); }
+.search button { display: inline-flex; align-items: center; justify-content: center; width: 46px; min-height: 44px; background: var(--blue); color: #fff; border: 1px solid var(--blue); cursor: pointer; }
+.search button:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+
+.burger, .callbtn { display: none; }
+.callbtn { margin-left: auto; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--blue-deep); color: #fff; }
+
+/* ---------------- Меню ---------------- */
+.nav { background: var(--blue-deep); position: sticky; top: 0; z-index: 20; }
+.nav__list { display: flex; flex-wrap: wrap; }
+.nav__list a { display: block; padding: 12px 15px; color: #E4ECF6; text-decoration: none; font-size: .9375rem; font-weight: 700; }
+.nav__list a:hover { background: rgba(255,255,255,.14); color: #fff; }
+.nav__list a[aria-current="page"] { background: #fff; color: var(--blue-deep); }
+
+/* ---------------- Хлебные крошки ---------------- */
+.crumbs { background: var(--surface-2); border-bottom: 1px solid var(--line); font-size: .8125rem; color: var(--muted); }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 8px; padding-block: 9px; }
+.crumbs li + li::before { content: "/"; margin-right: 8px; color: var(--line); }
+
+/* ---------------- Общие блоки ---------------- */
+.section { padding-block: 30px; }
+.section + .section { border-top: 1px solid var(--line-soft); }
+.section--grey { background: var(--surface-2); border-block: 1px solid var(--line); }
+
+.h2 { font-size: 1.375rem; padding-bottom: 10px; border-bottom: 2px solid var(--blue); margin-bottom: 20px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.h2 .h2__all { margin-left: auto; font-size: .875rem; font-weight: 400; }
+
+/* Официальное объявление под меню */
+.notice { display: flex; gap: 18px; align-items: flex-start; background: var(--blue-wash); border: 1px solid var(--line); border-left: 4px solid var(--blue); padding: 16px 20px; margin-top: 24px; }
+.notice h1 { font-size: 1.25rem; }
+.notice p { margin-top: 6px; color: var(--ink-2); font-size: .9375rem; }
+.notice__req { margin-top: 10px; font-size: .875rem; color: var(--muted); }
+
+/* Две колонки: лента и служебный сайдбар */
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start; }
+
+/* Лента новостей */
+.feed li { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; padding-block: 18px; border-bottom: 1px solid var(--line-soft); }
+.feed li:first-child { padding-top: 0; }
+.feed img { width: 132px; height: 88px; object-fit: cover; display: block; border: 1px solid var(--line); }
+.feed__noimg { width: 132px; height: 88px; background: var(--surface-3); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--blue); }
+.feed__date { font-size: .8125rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.feed h3 { font-size: 1rem; margin-top: 3px; }
+.feed h3 a { text-decoration: none; }
+.feed h3 a:hover { text-decoration: underline; }
+.feed p { font-size: .875rem; color: var(--ink-2); margin-top: 5px; }
+
+/* Служебный сайдбар */
+.side { display: grid; gap: 22px; }
+.side__box { border: 1px solid var(--line); }
+.side__h { background: var(--blue-deep); color: #fff; font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 10px 14px; }
+.side__body { padding: 14px; }
+.linklist li + li { border-top: 1px solid var(--line-soft); }
+.linklist a { display: flex; gap: 10px; align-items: center; padding: 10px 2px; font-size: .9375rem; text-decoration: none; font-weight: 700; }
+.linklist a:hover { text-decoration: underline; }
+.linklist svg { flex: 0 0 auto; color: var(--blue); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: inherit; font-weight: 700; padding: 12px 20px; min-height: 44px;
+  border: 1px solid var(--blue-deep); background: var(--blue-deep); color: #fff;
+  text-decoration: none; cursor: pointer; text-align: center; white-space: nowrap;
+}
+.btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn--ghost { background: #fff; color: var(--blue-deep); border-color: var(--line); }
+.btn--ghost:hover { background: var(--blue-wash); border-color: var(--blue); color: var(--blue-deep); }
+.btn--block { width: 100%; }
+
+/* Экстренные телефоны */
+.urgent { border: 1px solid var(--line); border-left: 4px solid var(--red); }
+.urgent .side__h { background: var(--red); }
+.urgent li { display: flex; justify-content: space-between; gap: 14px; padding-block: 8px; font-size: .9375rem; }
+.urgent li + li { border-top: 1px solid var(--line-soft); }
+.urgent a { font-weight: 700; font-variant-numeric: tabular-nums; text-decoration: none; }
+
+/* ---------------- Таблицы: основной приём государственного сайта ---------------- */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; font-size: .9375rem; min-width: 620px; }
+caption { text-align: left; font-size: .8125rem; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+thead th { background: var(--blue-deep); color: #fff; font-size: .875rem; border-color: var(--blue-deep); }
+tbody tr:nth-child(even) td { background: var(--surface-2); }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.tablenote { font-size: .8125rem; color: var(--muted); margin-top: 10px; }
+
+/* Три официальных раздела */
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.trio article { border: 1px solid var(--line); border-top: 3px solid var(--blue); padding: 20px; }
+.trio h3 { font-size: 1.0625rem; }
+.trio p { font-size: .9375rem; color: var(--ink-2); margin-top: 8px; }
+.trio a { display: inline-block; margin-top: 12px; font-weight: 700; font-size: .9375rem; }
+
+/* Реквизиты */
+.reqs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.reqs div { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 14px; padding-block: 10px; border-bottom: 1px solid var(--line-soft); font-size: .9375rem; }
+.reqs dt { color: var(--muted); }
+.reqs dd { margin: 0; font-weight: 700; }
+.reqs dd a { text-decoration: none; }
+
+/* Ведомственные баннеры */
+.banners { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.banner { display: block; border: 1px solid var(--line); background: #fff; padding: 14px 16px; text-decoration: none; }
+.banner:hover { border-color: var(--blue); background: var(--blue-wash); }
+.banner b { display: block; font-size: .9375rem; color: var(--blue-deep); }
+.banner span { display: block; font-size: .75rem; color: var(--muted); margin-top: 3px; }
+
+/* Подвал */
+.foot { background: var(--blue-deep); color: #D6E1F0; padding-block: 30px 0; margin-top: 30px; font-size: .9375rem; }
+.foot a { color: inherit; }
+.foot__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 34px; }
+.foot h2 { font-size: .9375rem; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 12px; }
+.foot ul { display: grid; gap: 8px; }
+.foot__org { line-height: 1.5; color: #BFCEE2; }
+.foot__meta { margin-top: 26px; padding-block: 14px; border-top: 1px solid rgba(255,255,255,.18); display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: .8125rem; color: #AFC1DA; }
+
+.demo-note { border: 1px dashed var(--line); background: var(--surface-2); padding: 12px 16px; font-size: .875rem; color: var(--ink-2); margin-top: 18px; }
+
+/* ---------------- Движение: почти нет, это госресурс ---------------- */
+.btn, .nav__list a, .banner, .tool, .filters button { transition: background-color 110ms linear, color 110ms linear, border-color 110ms linear; }
+
+/* ---------------- Адаптив ---------------- */
+@media (max-width: 1040px) {
+  .cols { grid-template-columns: 1fr; gap: 30px; }
+  .trio { grid-template-columns: 1fr; }
+  .banners { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reqs { grid-template-columns: 1fr; }
+  .foot__grid { grid-template-columns: 1fr 1fr; }
+  .search input { width: 140px; }
+}
+@media (max-width: 720px) {
+  .head__aside { display: none; }
+  .callbtn { display: inline-flex; }
+  .burger { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: 10px; background: #fff; border: 1px solid var(--line); color: var(--ink); cursor: pointer; }
+  .head__title { font-size: .9375rem; }
+  .head__brand img { width: 48px; height: 48px; }
+  .nav__list { display: none; flex-direction: column; }
+  .nav[data-open="true"] .nav__list { display: flex; }
+  .nav__list a { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .feed li { grid-template-columns: 1fr; }
+  .feed img, .feed__noimg { width: 100%; height: 170px; }
+  .foot__grid { grid-template-columns: 1fr; }
+  .notice { flex-direction: column; gap: 10px; }
+}
+
+/* ---------------- Версия для слабовидящих ---------------- */
+:root[data-a11y="on"] {
+  --ground: #FFFFFF; --surface-2: #FFFFFF; --surface-3: #FFFFFF;
+  --line: #000000; --line-soft: #000000;
+  --ink: #000000; --ink-2: #000000; --muted: #000000;
+  --blue: #000000; --blue-deep: #000000; --blue-wash: #FFFFFF;
+  --gold: #000000; --red: #000000; --red-wash: #FFFFFF;
+}
+:root[data-a11y="on"][data-a11y-scheme="inverse"] {
+  --ground: #000000; --surface-2: #000000; --surface-3: #000000;
+  --line: #FFFFFF; --line-soft: #FFFFFF;
+  --ink: #FFFFFF; --ink-2: #FFFFFF; --muted: #FFFFFF;
+  --blue: #FFFFFF; --blue-deep: #FFFFFF; --blue-wash: #000000;
+  --gold: #FFFF00; --red: #FFFF00;
+}
+:root[data-a11y="on"] body { background: var(--ground); color: var(--ink); }
+:root[data-a11y="on"] .gosbar,
+:root[data-a11y="on"] .foot,
+:root[data-a11y="on"] .nav,
+:root[data-a11y="on"] .side__h,
+:root[data-a11y="on"] thead th { background: var(--ground); color: var(--ink); border: 1px solid var(--line); }
+:root[data-a11y="on"] .gosbar a,
+:root[data-a11y="on"] .foot a,
+:root[data-a11y="on"] .foot__org,
+:root[data-a11y="on"] .foot__meta,
+:root[data-a11y="on"] .nav__list a { color: var(--ink); }
+:root[data-a11y="on"] .nav__list a[aria-current="page"],
+:root[data-a11y="on"] .tool[aria-pressed="true"],
+:root[data-a11y="on"] .langs button[aria-pressed="true"],
+:root[data-a11y="on"] .filters button[aria-pressed="true"],
+:root[data-a11y="on"] .btn { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+:root[data-a11y="on"] .btn--ghost { background: var(--ground); color: var(--ink); }
+:root[data-a11y="on"] .tool,
+:root[data-a11y="on"] .langs button { background: var(--ground); color: var(--ink); border: 1px solid var(--line); }
+:root[data-a11y="on"] tbody tr:nth-child(even) td { background: var(--ground); }
+:root[data-a11y="on"] .gosbar__flag i,
+:root[data-a11y="on"] .feed img,
+:root[data-a11y="on"] .feed__noimg,
+:root[data-a11y="on"] .head__brand img { display: none; }
+:root[data-a11y="on"] * { transition: none !important; animation: none !important; }
+
+/* ============================================================
+   ПОЛОСА ПРЕДПРОСМОТРА. Служебная, к дизайну варианта не относится.
+   Нужна, чтобы страницу не приняли за действующий сайт больницы,
+   и чтобы между вариантами можно было переключаться на ходу.
+   Перед сдачей удаляется вместе с разметкой .preview.
+   ============================================================ */
+.preview {
+  background: #1E1E22; color: #D8D8DE;
+  font: 500 13px/1.4 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  letter-spacing: .01em;
+}
+.preview__in {
+  max-width: 1180px; margin-inline: auto; padding: 9px 20px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+}
+.preview b { color: #fff; font-weight: 700; }
+.preview span { color: #9A9AA4; }
+.preview a { color: #fff; text-decoration: underline; text-underline-offset: 3px; margin-left: auto; }
+.preview a:hover { text-decoration: none; }
+@media (max-width: 560px) { .preview a { margin-left: 0; } }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main" data-kk="Негізгі мазмұнға өту">Перейти к содержанию</a>
+
+<div class="preview">
+  <div class="preview__in">
+    <b>Демонстрационная версия</b>
+    <span>Вариант 2 из 3. Строго государственный</span>
+    <a href="../index.html">Другие варианты</a>
+  </div>
+</div>
+
+<!-- ===================== ГОСУДАРСТВЕННАЯ ПОЛОСА ===================== -->
+<div class="gosbar">
+  <div class="wrap gosbar__inner">
+    <span class="gosbar__flag"><i aria-hidden="true"></i><span data-kk="Ресми интернет-ресурс">Официальный интернет-ресурс</span></span>
+    <span class="gosbar__spacer"></span>
+
+    <button class="tool" type="button" id="a11yToggle" aria-pressed="false">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span data-kk="Нашар көретіндерге">Для слабовидящих</span>
+    </button>
+
+    <div class="langs" role="group" aria-label="Язык сайта">
+      <button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button>
+      <button type="button" data-lang="ru" aria-pressed="true">РУС</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ПАНЕЛЬ СЛАБОВИДЯЩИХ ===================== -->
+<div class="a11y-bar">
+  <div class="wrap a11y-bar__inner" role="group" aria-label="Настройки версии для слабовидящих">
+    <div class="a11y-bar__group">
+      <span data-kk="Қаріп өлшемі">Размер шрифта</span>
+      <button type="button" data-fs="1" aria-pressed="true">A</button>
+      <button type="button" data-fs="1.25" aria-pressed="false">A+</button>
+      <button type="button" data-fs="1.5" aria-pressed="false">A++</button>
+    </div>
+    <div class="a11y-bar__group">
+      <span data-kk="Түс схемасы">Цветовая схема</span>
+      <button type="button" data-scheme="normal" aria-pressed="true" data-kk="Ақ фон">Белый фон</button>
+      <button type="button" data-scheme="inverse" aria-pressed="false" data-kk="Қара фон">Чёрный фон</button>
+    </div>
+    <div class="a11y-bar__group">
+      <button type="button" id="a11yOff" data-kk="Әдеттегі нұсқа">Обычная версия</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ШАПКА ===================== -->
+<header class="head">
+  <div class="wrap head__inner">
+    <a class="head__brand" href="#">
+      <img src="assets/emblem.png" width="62" height="62" alt="">
+      <span>
+        <span class="head__title" data-kk="«Қарағанды қаласының № 1 көпбейінді ауруханасы» КМК">КГП «Многопрофильная больница № 1 города Караганды»</span>
+        <span class="head__parent" data-kk="Қарағанды облысы денсаулық сақтау басқармасы">Управление здравоохранения Карагандинской области</span>
+      </span>
+    </a>
+
+    <div class="head__aside">
+      <form class="search" role="search" id="searchForm">
+        <label class="skip" for="q" data-kk="Сайт бойынша іздеу">Поиск по сайту</label>
+        <input id="q" name="q" type="search" placeholder="Поиск по сайту" data-kk-placeholder="Сайт бойынша іздеу">
+        <button type="submit" aria-label="Найти">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </form>
+
+      <div class="cc">
+        <div class="cc__label" data-kk="Бірыңғай байланыс нөмірі">Единый номер дозвона</div>
+        <div class="cc__num"><a href="tel:+77212310778">8 (7212) 31-07-78</a></div>
+      </div>
+    </div>
+
+    <a class="callbtn" href="tel:+77212310778" aria-label="Позвонить в больницу">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    </a>
+
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Меню">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== МЕНЮ ===================== -->
+<nav class="nav" id="mainnav" data-open="false" aria-label="Основное меню">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a href="#" aria-current="page" data-kk="Басты бет">Главная</a></li>
+      <li><a href="https://karhospital.kz/index.php/o-bolnitse" data-kk="Мекеме туралы">Об учреждении</a></li>
+      <li><a href="#services" data-kk="Қызметтер">Услуги</a></li>
+      <li><a href="#schedule" data-kk="Жұмыс кестесі">Режим работы</a></li>
+      <li><a href="https://karhospital.kz/index.php/info/obyavleniya-gz" data-kk="Мемлекеттік сатып алулар">Государственные закупки</a></li>
+      <li><a href="#official" data-kk="Сыбайлас жемқорлыққа қарсы іс-қимыл">Противодействие коррупции</a></li>
+      <li><a href="#news" data-kk="Баспасөз орталығы">Пресс-центр</a></li>
+      <li><a href="#contacts" data-kk="Байланыс">Контакты</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="crumbs">
+  <div class="wrap">
+    <ol>
+      <li data-kk="Басты бет">Главная</li>
+    </ol>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ===================== ОБЪЯВЛЕНИЕ + ЛЕНТА + САЙДБАР ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="notice">
+      <div>
+        <h1 data-kk="Қарағанды қаласының № 1 көпбейінді ауруханасы">Многопрофильная больница № 1 города Караганды</h1>
+        <p data-kk="Октябрь ауданының тұрғындарына амбулаториялық-емханалық және стационарлық көмек. Қабылдау бөлімі тәулік бойы жұмыс істейді.">Амбулаторно-поликлиническая и стационарная помощь жителям Октябрьского района. Приёмный покой работает круглосуточно.</p>
+        <p class="notice__req" data-kk="Мекенжайы: Қарағанды қ., Бирюзов көшесі, 22 · Лицензия ДМ 1057 · Құрылған жылы 1930">Адрес: г. Караганда, ул. Бирюзова, 22 · Лицензия ДМ 1057 · Основана в 1930 году</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cols">
+
+    <div id="news">
+      <h2 class="h2">
+        <span data-kk="Баспасөз орталығы">Пресс-центр</span>
+        <a class="h2__all" href="https://karhospital.kz/index.php/2013-02-20-08-59-23" data-kk="Барлық жаңалықтар">Все новости</a>
+      </h2>
+
+      <ul class="feed">
+        <li>
+          <span data-kk="<img src='assets/news/gobmp-kk.jpg' alt='' loading='lazy' width='132' height='88'>"><img src="assets/news/gobmp-ru.jpg" alt="" loading="lazy" width="132" height="88"></span>
+          <div>
+            <div class="feed__date" data-kk="2019 жылғы 2 тамыз">22 мая 2019 года</div>
+            <h3><a href="https://karhospital.kz/index.php/2013-02-20-08-59-23/273-lechitsya-v-kazahstane" data-kk="Қазақстанда қалай тегін емделуге болады?">Как лечиться в Казахстане бесплатно?</a></h3>
+            <p data-kk="Тегін емделу тегін медициналық көмектің кепілдік берілген көлемі шеңберінде мүмкін. ТМККК барлық ҚР азаматтарына, оралмандарға және ықтиярхаты бар шетелдіктерге қолжетімді.">Бесплатно лечиться в Казахстане возможно в рамках гарантированного объёма бесплатной медицинской помощи. ГОБМП доступен всем гражданам РК, оралманам и иностранцам с видом на жительство.</p>
+          </div>
+        </li>
+
+        <li>
+          <!-- У материала нет изображения: на старом сайте это два ролика
+               YouTube, оба сейчас отдают 404 -->
+          <span class="feed__noimg" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h9l4.5 4.5v14.5H6z"/><path d="M14.5 2.5V7H19"/><path d="M9.5 12.5h6M9.5 16.5h4"/></svg>
+          </span>
+          <div>
+            <div class="feed__date" data-kk="2019 жылғы 13 ақпан">13 февраля 2019 года</div>
+            <h3><a href="https://karhospital.kz/index.php/2013-02-20-08-59-23/263-obyazatelnoe-sotsialno-meditsinskoe-strakhovanie" data-kk="Міндетті әлеуметтік медициналық сақтандыру">Обязательное социально-медицинское страхование</a></h3>
+            <p data-kk="Қазақстанда 2020 жылдың 1 қаңтарынан бастап міндетті медициналық сақтандыру жүйесі өз күшіне енеді. fms.kz сайтына кіріңіз немесе 1414 нөміріне тегін қоңырау шалыңыз.">С 1 января 2020 года в Казахстане вступает в силу система обязательного медицинского страхования. Зайдите на сайт fms.kz или позвоните на бесплатный номер 1414.</p>
+          </div>
+        </li>
+
+        <li>
+          <span><img src="assets/news/kor.jpg" alt="" loading="lazy" width="132" height="88"></span>
+          <div>
+            <div class="feed__date" data-kk="2019 жылғы 4 ақпан">4 февраля 2019 года</div>
+            <h3><a href="https://karhospital.kz/index.php/2013-02-20-08-59-23/260-kruglyj-stol-vspyshka-kori" data-kk="Қызылша өршуі бойынша дөңгелек үстел">Круглый стол о вспышке кори</a></h3>
+            <p data-kk="2019 жылғы 31 қаңтарда Қарағанды облысы денсаулық сақтау басқармасының мамандары Октябрь ауданының СООЗ-бен бірлесіп дөңгелек үстел өткізді.">31 января 2019 года специалисты управления здравоохранения Карагандинской области совместно с СООЗ Октябрьского района провели круглый стол о вспышке кори в области.</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="demo-note" data-kk="Үш жаңалық та — ескі сайттан алынған нақты материалдар, өз күндерімен және суреттерімен. Бөлім 2019 жылдың сәуірінен бері жаңартылмаған.">Все три новости настоящие: взяты со старого сайта вместе с датами и картинками. Раздел не обновлялся с апреля 2019 года.</p>
+    </div>
+
+    <aside class="side" id="services" aria-label="Услуги и справочная информация">
+      <div class="side__box">
+        <h2 class="side__h" data-kk="Пациентке қызметтер">Сервисы для пациента</h2>
+        <div class="side__body">
+          <ul class="linklist">
+            <li><a href="https://lkp-krg.dmed.kz" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg>
+              <span data-kk="Қабылдауға жазылу">Запись на приём</span></a></li>
+            <li><a href="https://karhospital.kz/index.php/info/adresa-uchastkov">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.3c0 5.1-8 12-8 12s-8-6.9-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg>
+              <span data-kk="Учаскелердің мекенжайлары">Адреса участков</span></a></li>
+            <li><a href="https://karhospital.kz/sch/">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></svg>
+              <span data-kk="Дәрігерлердің жұмыс кестесі">График работы врачей</span></a></li>
+            <li><a href="https://karhospital.kz/images/040326.pdf">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2.5h9l4.5 4.5v14.5H6z"/><path d="M14.5 2.5V7H19"/></svg>
+              <span data-kk="Бағалар прейскуранты">Прейскурант цен</span></a></li>
+            <li><a href="https://lkp-krg.dmed.kz" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1.8a3.2 3.2 0 0 0-3.2-3.2H6.2A3.2 3.2 0 0 0 3 18.2V20"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="m16.5 11 2 2 4-4"/></svg>
+              <span data-kk="Тіркелуді тексеру">Проверка прикрепления</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="side__box urgent">
+        <h2 class="side__h" data-kk="Шұғыл телефондар">Экстренные телефоны</h2>
+        <div class="side__body">
+          <ul>
+            <li><span data-kk="Қабылдау бөлімі">Приёмный покой</span> <a href="tel:+77212310901">31-09-01</a></li>
+            <li><span data-kk="Реанимация">Реанимация</span> <a href="tel:+77212310902">31-09-02</a></li>
+            <li><span data-kk="Жедел жәрдем">Скорая помощь</span> <a href="tel:103">103</a></li>
+            <li><span data-kk="Пациенттерді қолдау қызметі">Служба поддержки пациентов</span> <a href="tel:+77212462280">46-22-80</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="side__box">
+        <h2 class="side__h" data-kk="МӘМС бойынша анықтама">Справка по ОСМС</h2>
+        <div class="side__body">
+          <p style="font-size:.9375rem;color:var(--ink-2)" data-kk="Сақтандыру мәртебесін тексеру және жарналар туралы сұрақтар — Әлеуметтік медициналық сақтандыру қорының бірыңғай байланыс орталығы арқылы.">Проверить статус страхования и задать вопросы по взносам можно в едином контакт-центре Фонда социального медицинского страхования.</p>
+          <p style="margin-top:12px"><a class="btn btn--ghost btn--block" href="tel:1414">1414</a></p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ===================== РЕЖИМ РАБОТЫ: ТАБЛИЦА ===================== -->
+<section class="section section--grey" id="schedule">
+  <div class="wrap">
+    <h2 class="h2">
+      <span data-kk="Бөлімшелердің жұмыс режимі">Режим работы отделений</span>
+      <a class="h2__all" href="https://karhospital.kz/sch/" data-kk="Дәрігерлердің толық кестесі">Полное расписание врачей</a>
+    </h2>
+
+    <div class="tablewrap">
+      <table>
+        <caption data-kk="Кесте ақпараттық сипатта. Дәрігерлердің нақты қабылдау уақыты — кестелер қызметінде.">Таблица носит справочный характер. Точные часы приёма врачей — в сервисе расписаний.</caption>
+        <thead>
+          <tr>
+            <th data-kk="Бөлімше, орталық">Отделение, центр</th>
+            <th data-kk="Жұмыс күндері">Будние дни</th>
+            <th data-kk="Сенбі">Суббота</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-kk="Отбасылық денсаулық орталықтары № 1, № 2, № 3">Центры семейного здоровья № 1, № 2, № 3</td>
+            <td class="num">08:00 – 20:00</td>
+            <td class="num">09:00 – 14:00</td>
+          </tr>
+          <tr>
+            <td data-kk="Консультациялық-диагностикалық бөлімше">Консультативно-диагностическое отделение</td>
+            <td class="num">08:00 – 18:00</td>
+            <td class="num" data-kk="Демалыс">Выходной</td>
+          </tr>
+          <tr>
+            <td data-kk="Функционалдық және ультрадыбыстық диагностика бөлімшесі">Отделение функциональной и ультразвуковой диагностики</td>
+            <td class="num">08:00 – 17:00</td>
+            <td class="num" data-kk="Демалыс">Выходной</td>
+          </tr>
+          <tr>
+            <td data-kk="Рентген бөлімшесі">Рентгенотделение</td>
+            <td class="num">08:00 – 17:00</td>
+            <td class="num" data-kk="Демалыс">Выходной</td>
+          </tr>
+          <tr>
+            <td data-kk="Амбулаториялық хирургия орталығы">Центр амбулаторной хирургии</td>
+            <td class="num">08:00 – 17:00</td>
+            <td class="num" data-kk="Демалыс">Выходной</td>
+          </tr>
+          <tr>
+            <td data-kk="Травмпункт">Травмпункт</td>
+            <td class="num" data-kk="Тәулік бойы">Круглосуточно</td>
+            <td class="num" data-kk="Тәулік бойы">Круглосуточно</td>
+          </tr>
+          <tr>
+            <td data-kk="Қабылдау бөлімі, реанимация">Приёмный покой, реанимация</td>
+            <td class="num" data-kk="Тәулік бойы">Круглосуточно</td>
+            <td class="num" data-kk="Тәулік бойы">Круглосуточно</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tablenote" data-kk="Кестедегі уақыт — көрсету үшін: мекеменің ескі сайтында бөлімшелердің жұмыс режимі жарияланбаған, оны тапсырыс беруші беруі керек.">Часы в таблице показаны для примера: на старом сайте режим работы отделений не опубликован, его должен предоставить заказчик.</p>
+  </div>
+</section>
+
+
+<!-- ===================== ОБЯЗАТЕЛЬНЫЕ РАЗДЕЛЫ ===================== -->
+<section class="section section--grey" id="official">
+  <div class="wrap">
+    <h2 class="h2"><span data-kk="Азаматтармен өзара іс-қимыл">Взаимодействие с гражданами</span></h2>
+
+    <div class="trio">
+      <article>
+        <h3 data-kk="Сыбайлас жемқорлыққа қарсы іс-қимыл">Противодействие коррупции</h3>
+        <p data-kk="Комплаенс қызметі, коррупциялық тәуекелдерге ұшыраған лауазымдар тізілімі, тәуекелдер тізбесі және этикалық кодекс.">Комплаенс-служба, реестр должностей, подверженных коррупционным рискам, перечень рисков и этический кодекс.</p>
+        <a href="https://karhospital.kz/index.php/antikor" data-kk="Бөлімге өту">Перейти в раздел</a>
+      </article>
+
+      <article>
+        <h3 data-kk="Басшының блогы">Блог руководителя</h3>
+        <p data-kk="Директорға сұрақ қоюға және жауап алуға болады. Директордың жеке қабылдауы кестесі жарияланған.">Можно задать вопрос директору и получить ответ. Опубликован график личного приёма руководителя.</p>
+        <a href="https://karhospital.kz/index.php/blog-rukovoditelya" data-kk="Сұрақ қою">Задать вопрос</a>
+      </article>
+
+      <article>
+        <h3 data-kk="Пациенттерді қолдау қызметі">Служба поддержки пациентов</h3>
+        <p data-kk="Медициналық көмекті ұйымдастыру бойынша өтініштер мен шағымдар. Қабылдау кестесі және байланыс телефоны.">Обращения и жалобы по организации медицинской помощи. График приёма и контактный телефон 46-22-80.</p>
+        <a href="https://karhospital.kz/index.php/info/sluzhba-podderzhki-patsientov" data-kk="Байланысу">Обратиться</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== РЕКВИЗИТЫ ===================== -->
+<section class="section" id="contacts">
+  <div class="wrap">
+    <h2 class="h2"><span data-kk="Мекеме деректемелері">Реквизиты и контакты учреждения</span></h2>
+
+    <dl class="reqs">
+      <div>
+        <dt data-kk="Толық атауы">Полное наименование</dt>
+        <dd data-kk="«Қарағанды қаласының № 1 көпбейінді ауруханасы» КМК">КГП «Многопрофильная больница № 1 города Караганды»</dd>
+      </div>
+      <div>
+        <dt data-kk="Құрылтайшы">Учредитель</dt>
+        <dd data-kk="Қарағанды облысы денсаулық сақтау басқармасы">Управление здравоохранения Карагандинской области</dd>
+      </div>
+      <div>
+        <dt data-kk="Заңды және нақты мекенжайы">Юридический и фактический адрес</dt>
+        <dd data-kk="Қарағанды қ., Октябрь ауданы, Бирюзов көшесі, 22">г. Караганда, Октябрьский район, ул. Бирюзова, 22</dd>
+      </div>
+      <div>
+        <dt data-kk="Лицензия">Лицензия</dt>
+        <dd>ДМ 1057</dd>
+      </div>
+      <div>
+        <dt data-kk="Телефондар">Телефоны</dt>
+        <dd><a href="tel:+77212310778">31-07-78</a>, <a href="tel:+77212310904">31-09-04</a>, <a href="tel:+77212311463">31-14-63</a></dd>
+      </div>
+      <div>
+        <dt data-kk="Факс">Факс</dt>
+        <dd>31-09-07</dd>
+      </div>
+      <div>
+        <dt data-kk="Электрондық пошта">Электронная почта</dt>
+        <dd><a href="mailto:karhospital@inbox.ru">karhospital@inbox.ru</a></dd>
+      </div>
+      <div>
+        <dt data-kk="Сатып алулар бөлімі">Отдел закупок</dt>
+        <dd><a href="mailto:zakup-gb1@mail.ru">zakup-gb1@mail.ru</a></dd>
+      </div>
+      <div>
+        <dt data-kk="Қабылдау бөлмесінің жұмыс режимі">Режим работы приёмной</dt>
+        <dd data-kk="Дүйсенбі – жұма, 08:00 – 17:00">Понедельник – пятница, 08:00 – 17:00</dd>
+      </div>
+      <div>
+        <dt data-kk="Дәріхана дүңгіршегі">Аптечный киоск</dt>
+        <dd><a href="tel:+77212507032">50-70-32</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== ВЕДОМСТВЕННЫЕ БАННЕРЫ ===================== -->
+<section class="section section--grey">
+  <div class="wrap">
+    <h2 class="h2"><span data-kk="Ресми ресурстар">Официальные ресурсы</span></h2>
+    <div class="banners">
+      <a class="banner" href="https://egov.kz" target="_blank" rel="noopener noreferrer">
+        <b>egov.kz</b><span data-kk="Электрондық үкімет">Электронное правительство</span>
+      </a>
+      <a class="banner" href="https://www.akorda.kz" target="_blank" rel="noopener noreferrer">
+        <b>akorda.kz</b><span data-kk="ҚР Президенті">Президент Республики Казахстан</span>
+      </a>
+      <a class="banner" href="https://primeminister.kz" target="_blank" rel="noopener noreferrer">
+        <b>primeminister.kz</b><span data-kk="ҚР Үкіметі">Правительство Республики Казахстан</span>
+      </a>
+      <a class="banner" href="https://adilet.zan.kz" target="_blank" rel="noopener noreferrer">
+        <b>adilet.zan.kz</b><span data-kk="Нормативтік құқықтық актілер">Нормативные правовые акты</span>
+      </a>
+      <a class="banner" href="https://fms.kz" target="_blank" rel="noopener noreferrer">
+        <b>fms.kz</b><span data-kk="Әлеуметтік медициналық сақтандыру қоры">Фонд социального медицинского страхования</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== ПОДВАЛ ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h2 data-kk="Мекеме">Учреждение</h2>
+        <p class="foot__org" data-kk="Қарағанды облысы денсаулық сақтау басқармасының «Қарағанды қаласының № 1 көпбейінді ауруханасы» коммуналдық мемлекеттік кәсіпорны. Қарағанды қ., Бирюзов көшесі, 22.">Коммунальное государственное предприятие «Многопрофильная больница № 1 города Караганды» управления здравоохранения Карагандинской области. г. Караганда, ул. Бирюзова, 22.</p>
+      </div>
+
+      <div>
+        <h2 data-kk="Бөлімдер">Разделы</h2>
+        <ul>
+          <li><a href="https://karhospital.kz/index.php/o-bolnitse" data-kk="Мекеме туралы">Об учреждении</a></li>
+          <li><a href="#services" data-kk="Қызметтер">Услуги</a></li>
+          <li><a href="https://karhospital.kz/index.php/info/obyavleniya-gz" data-kk="Мемлекеттік сатып алулар">Государственные закупки</a></li>
+          <li><a href="#official" data-kk="Сыбайлас жемқорлыққа қарсы іс-қимыл">Противодействие коррупции</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 data-kk="Байланыс">Контакты</h2>
+        <ul>
+          <li><a href="tel:+77212310778">8 (7212) 31-07-78</a></li>
+          <li><a href="mailto:karhospital@inbox.ru">karhospital@inbox.ru</a></li>
+          <li><a href="tel:1414">Контакт-центр ФСМС 1414</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__meta">
+      <span data-kk="© 2026 «Қарағанды қаласының № 1 көпбейінді ауруханасы» КМК">© 2026 КГП «Многопрофильная больница № 1 города Караганды»</span>
+      <span data-kk="Соңғы жаңарту күні: 14.09.2026">Дата последнего обновления: 14.09.2026</span>
+      <span data-kk="Демонстрациялық нұсқа">Демонстрационная версия</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+
+  /* ---------- Язык. Переводимый узел несёт data-kk ---------- */
+  function setLang(lang) {
+    var nodes = document.querySelectorAll("[data-kk]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (!el.hasAttribute("data-ru")) el.setAttribute("data-ru", el.innerHTML);
+      el.innerHTML = el.getAttribute(lang === "kk" ? "data-kk" : "data-ru");
+    }
+    var fields = document.querySelectorAll("[data-kk-placeholder]");
+    for (var k = 0; k < fields.length; k++) {
+      var f = fields[k];
+      if (!f.hasAttribute("data-ru-placeholder")) {
+        f.setAttribute("data-ru-placeholder", f.getAttribute("placeholder") || "");
+      }
+      f.setAttribute("placeholder", f.getAttribute(
+        lang === "kk" ? "data-kk-placeholder" : "data-ru-placeholder"));
+    }
+    root.setAttribute("lang", lang);
+    press("[data-lang]", null, function (b) { return b.getAttribute("data-lang") === lang; });
+  }
+
+  function press(selector, active, match) {
+    var group = document.querySelectorAll(selector);
+    for (var i = 0; i < group.length; i++) {
+      group[i].setAttribute("aria-pressed", String(match ? match(group[i]) : group[i] === active));
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+
+    var langBtn = t.closest("[data-lang]");
+    if (langBtn) { setLang(langBtn.getAttribute("data-lang")); return; }
+
+    var fsBtn = t.closest("[data-fs]");
+    if (fsBtn) { root.style.setProperty("--fs", fsBtn.getAttribute("data-fs")); press("[data-fs]", fsBtn); return; }
+
+    var schemeBtn = t.closest("[data-scheme]");
+    if (schemeBtn) { root.setAttribute("data-a11y-scheme", schemeBtn.getAttribute("data-scheme")); press("[data-scheme]", schemeBtn); return; }
+
+  });
+
+  /* ---------- Версия для слабовидящих ---------- */
+  var a11yToggle = document.getElementById("a11yToggle");
+  var a11yOff = document.getElementById("a11yOff");
+
+  function setA11y(on) {
+    if (on) {
+      root.setAttribute("data-a11y", "on");
+      root.setAttribute("data-a11y-scheme", root.getAttribute("data-a11y-scheme") || "normal");
+    } else {
+      root.removeAttribute("data-a11y");
+      root.style.setProperty("--fs", "1");
+      press("[data-fs]", document.querySelector('[data-fs="1"]'));
+    }
+    a11yToggle.setAttribute("aria-pressed", String(on));
+  }
+
+  a11yToggle.addEventListener("click", function () { setA11y(root.getAttribute("data-a11y") !== "on"); });
+  a11yOff.addEventListener("click", function () { setA11y(false); });
+
+  /* ---------- Мобильное меню ---------- */
+  var burger = document.getElementById("burger");
+  var nav = document.getElementById("mainnav");
+  burger.addEventListener("click", function () {
+    var open = nav.getAttribute("data-open") === "true";
+    nav.setAttribute("data-open", String(!open));
+    burger.setAttribute("aria-expanded", String(!open));
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.tagName === "A" && window.innerWidth <= 720) {
+      nav.setAttribute("data-open", "false");
+      burger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ---------- Поиск ---------- */
+  document.getElementById("searchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var form = e.currentTarget;
+    var hint = form.parentNode.querySelector(".search-hint");
+    if (!hint) {
+      hint = document.createElement("p");
+      hint.className = "search-hint";
+      hint.setAttribute("role", "status");
+      hint.style.cssText = "font-size:.8125rem;color:var(--muted);margin-top:6px;width:100%";
+      form.parentNode.appendChild(hint);
+    }
+    hint.textContent = root.getAttribute("lang") === "kk"
+      ? "Іздеу CMS-пен бірге қосылады."
+      : "Поиск подключается вместе с CMS.";
+  });
+})();
+</script>
+</body>
+</html>
