@@ -333,7 +333,7 @@ svg { flex: 0 0 auto; }
    ============================================================ */
 .stats {
   display: grid; gap: 16px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: 20px;
 }
 .stat {
@@ -357,9 +357,11 @@ svg { flex: 0 0 auto; }
 
 .quickrow { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
 
+/* Колонка главного экрана. Осталась одна — сетка нужна ради
+   отступа и предсказуемой ширины, а не ради двух колонок. */
 .cols {
   display: grid; gap: 18px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
 }
 
@@ -385,22 +387,6 @@ svg { flex: 0 0 auto; }
 .row__date { flex: 0 0 auto; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .row__acts { flex: 0 0 auto; display: flex; gap: 6px; opacity: 0; transition: opacity var(--t-tap) var(--ease-out); }
 .row:hover .row__acts, .row:focus-within .row__acts { opacity: 1; }
-/* Заглушка обложки: заливка вместо фотографии, чтобы строка списка
-   держала ритм и без загруженных изображений. */
-.row__thumb {
-  flex: 0 0 auto; width: 56px; height: 40px; border-radius: 5px;
-  background: linear-gradient(140deg, hsl(286 30% 88%), hsl(286 24% 78%));
-  overflow: hidden;
-}
-.row__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.check {
-  flex: 0 0 auto; width: 17px; height: 17px;
-  border: 1.5px solid var(--line-strong); border-radius: 3px;
-  background: var(--surface); cursor: pointer; padding: 0;
-}
-.check[aria-checked="true"] { background: var(--brand-deep); border-color: var(--brand-deep); }
-
 /* ============================================================
    ПАНЕЛЬ ФИЛЬТРОВ
    ============================================================ */
@@ -449,10 +435,8 @@ svg { flex: 0 0 auto; }
 .pager button[aria-current="true"] { background: var(--brand-deep); border-color: var(--brand-deep); color: #fff; }
 
 /* ============================================================
-   РЕДАКТОР НОВОСТИ
+   ФОРМЫ
    ============================================================ */
-.editor { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
-
 .formbody { padding: 20px; display: grid; gap: 18px; }
 .lbl { display: block; font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
 .lbl small { font-weight: 400; color: var(--muted); }
@@ -467,57 +451,6 @@ svg { flex: 0 0 auto; }
 .txa { resize: vertical; min-height: 96px; line-height: 1.6; font-family: inherit; }
 .hint { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
 
-.langtabs { display: flex; gap: 6px; margin-bottom: 10px; }
-.langtabs button {
-  border: 1px solid var(--line); border-radius: 20px;
-  background: var(--surface); cursor: pointer;
-  padding: 5px 14px; font-size: 13px; font-weight: 600; color: var(--muted);
-}
-.langtabs button[aria-pressed="true"] { background: var(--brand-deep); border-color: var(--brand-deep); color: #fff; }
-
-.toolbar {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
-  border: 1px solid var(--line-strong); border-bottom: 0;
-  border-radius: var(--radius) var(--radius) 0 0;
-  background: #FBFAFC; padding: 6px 8px;
-}
-.toolbar button {
-  display: grid; place-items: center;
-  width: 32px; height: 32px;
-  border: 0; border-radius: 5px; background: transparent;
-  cursor: pointer; color: var(--ink-2);
-}
-.toolbar button:hover { background: var(--surface-2); color: var(--brand-deep); }
-.toolbar b { font-size: 14px; }
-.toolbar i { font-size: 14px; }
-.toolbar u { font-size: 14px; }
-.toolbar__sep { width: 1px; height: 20px; background: var(--line); margin: 0 6px; }
-.rte {
-  border: 1px solid var(--line-strong); border-radius: 0 0 var(--radius) var(--radius);
-  padding: 16px 16px 20px; min-height: 260px;
-  font-size: 15px; line-height: 1.7; color: var(--ink-2);
-  background: var(--surface);
-}
-.rte p + p, .rte ul + p { margin-top: 13px; }
-.rte h3 { font-size: 16px; color: var(--ink); margin: 18px 0 8px; }
-.rte ul { list-style: disc; padding-left: 22px; }
-.rte ul li { margin-top: 5px; }
-
-.drop {
-  border: 1.5px dashed var(--line-strong); border-radius: var(--radius);
-  padding: 22px; text-align: center; color: var(--muted); font-size: 13.5px;
-  background: #FBFAFC;
-}
-.drop svg { color: var(--line-strong); margin-bottom: 6px; }
-.drop b { display: block; color: var(--ink); font-size: 14px; margin-bottom: 2px; }
-
-.aside-card + .aside-card { margin-top: 16px; }
-.aside-card .panel__head h2 { font-size: 14px; }
-.aside-body { padding: 16px 18px; display: grid; gap: 14px; }
-
-.meta-line { display: flex; align-items: baseline; gap: 10px; font-size: 13.5px; }
-.meta-line span { color: var(--muted); flex: 0 0 auto; }
-.meta-line b { font-weight: 600; margin-left: auto; text-align: right; }
 
 .switch {
   display: flex; align-items: center; gap: 10px;
@@ -599,8 +532,6 @@ svg { flex: 0 0 auto; }
    ============================================================ */
 .view { display: none; }
 :root[data-view="dash"]     #v-dash,
-:root[data-view="news"]     #v-news,
-:root[data-view="editor"]   #v-editor,
 :root[data-view="pages"]    #v-pages,
 :root[data-view="docs"]     #v-docs,
 :root[data-view="media"]    #v-media,
@@ -631,7 +562,6 @@ svg { flex: 0 0 auto; }
    ============================================================ */
 @media (max-width: 1180px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .editor { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 900px) {
   :root { --side-w: 76px; }
@@ -640,7 +570,6 @@ svg { flex: 0 0 auto; }
   .navitem span, .navitem .pill, .side__group, .side__user b, .side__user small, .side__user button { display: none; }
   .navitem { justify-content: center; padding-inline: 0; }
   .side__user { justify-content: center; padding-inline: 10px; }
-  .cols { grid-template-columns: minmax(0, 1fr); }
   .topbar, .content { padding-inline: 20px; }
   .grid2 { grid-template-columns: minmax(0, 1fr); }
 }
@@ -682,12 +611,6 @@ svg { flex: 0 0 auto; }
     <button class="navitem" type="button" data-go="dash" aria-current="page">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/></svg>
       <span data-kk="Басты бет">Главная</span>
-    </button>
-
-    <button class="navitem" type="button" data-go="news">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h7"/></svg>
-      <span data-kk="Жаңалықтар">Новости</span>
-      <span class="pill num">199</span>
     </button>
 
     <button class="navitem" type="button" data-go="pages">
@@ -773,10 +696,6 @@ svg { flex: 0 0 auto; }
 
     <div class="stats">
       <div class="stat">
-        <span class="stat__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h7"/></svg></span>
-        <span><b class="num">199</b><span data-kk="жаңалық жарияланды">новостей опубликовано</span></span>
-      </div>
-      <div class="stat">
         <span class="stat__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>
         <span><b class="num">12</b><span data-kk="бет сайтта">страниц сайта</span></span>
       </div>
@@ -791,11 +710,7 @@ svg { flex: 0 0 auto; }
     </div>
 
     <div class="quickrow">
-      <button class="btn btn--primary" type="button" data-go="editor">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        <span data-kk="Жаңалық қосу">Добавить новость</span>
-      </button>
-      <button class="btn btn--ghost" type="button" data-toast="Демонстрация: объявление не создаётся">
+      <button class="btn btn--primary" type="button" data-toast="Демонстрация: объявление не создаётся">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4h4l6 4V6l-6 4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
         <span data-kk="Жаңа хабарландыру">Новое объявление</span>
       </button>
@@ -810,45 +725,6 @@ svg { flex: 0 0 auto; }
     </div>
 
     <div class="cols">
-
-      <div class="panel">
-        <div class="panel__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h7"/></svg>
-          <h2 data-kk="Соңғы жаңалықтар">Последние новости</h2>
-          <button class="btn btn--ghost btn--sm" type="button" data-go="news" data-kk="Барлығы">Все</button>
-        </div>
-        <div class="rows">
-          <div class="row">
-            <div class="row__main">
-              <div class="row__title">Всемирная неделя осведомлённости об устойчивости к противомикробным препаратам</div>
-              <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-            </div>
-            <div class="row__date">20.11.2025</div>
-          </div>
-          <div class="row">
-            <div class="row__main">
-              <div class="row__title">Острая кишечная инфекция (ОКИ): профилактика в летний период</div>
-              <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-            </div>
-            <div class="row__date">17.07.2025</div>
-          </div>
-          <div class="row">
-            <div class="row__main">
-              <div class="row__title">Управление здравоохранения объявляет конкурс по отбору руководителей</div>
-              <div class="row__meta"><span class="status status--draft" data-kk="Жоба">Черновик</span><span class="lang-tag"><i class="on">RU</i><i>KK</i></span></div>
-            </div>
-            <div class="row__date">17.07.2025</div>
-          </div>
-          <div class="row">
-            <div class="row__main">
-              <div class="row__title">Круглый стол о вспышке кори в Карагандинской области</div>
-              <div class="row__meta"><span class="status status--wait" data-kk="Жоспарланған">Запланировано</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-            </div>
-            <div class="row__date">02.07.2025</div>
-          </div>
-        </div>
-        <div class="panel__foot"><a href="#" data-go="news" data-kk="Барлық 199 жаңалық →">Все 199 новостей →</a></div>
-      </div>
 
       <div class="panel">
         <div class="panel__head">
@@ -887,283 +763,6 @@ svg { flex: 0 0 auto; }
           </div>
         </div>
         <div class="panel__foot"><a href="#" data-go="appeals" data-kk="Барлық өтініштер →">Все обращения →</a></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ====================================================== НОВОСТИ -->
-  <section class="view" id="v-news">
-
-    <div class="tabs" role="tablist">
-      <button type="button" role="tab" aria-selected="true" data-kk="Барлығы 199">Все · 199</button>
-      <button type="button" role="tab" aria-selected="false" data-kk="Жарияланған 194">Опубликованные · 194</button>
-      <button type="button" role="tab" aria-selected="false" data-kk="Жобалар 4">Черновики · 4</button>
-      <button type="button" role="tab" aria-selected="false" data-kk="Жоспарланған 1">Запланированные · 1</button>
-    </div>
-
-    <div class="filters">
-      <div class="field field--grow">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input type="search" placeholder="Поиск по заголовку" data-kk-placeholder="Тақырып бойынша іздеу">
-      </div>
-      <div class="field">
-        <select class="sel" style="border:0;padding:0;box-shadow:none">
-          <option>Все рубрики</option>
-          <option>Здоровье</option>
-          <option>Объявления</option>
-          <option>Профилактика</option>
-          <option>Вакансии</option>
-        </select>
-      </div>
-      <div class="field">
-        <select class="sel" style="border:0;padding:0;box-shadow:none">
-          <option>За всё время</option>
-          <option>2026 год</option>
-          <option>2025 год</option>
-        </select>
-      </div>
-      <button class="btn btn--primary" type="button" data-go="editor">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        <span data-kk="Жаңалық қосу">Добавить новость</span>
-      </button>
-    </div>
-
-    <div class="panel">
-      <div class="rows">
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Всемирная неделя осведомлённости об устойчивости к противомикробным препаратам</div>
-            <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span>Профилактика</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-          </div>
-          <div class="row__date">20.11.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Острая кишечная инфекция (ОКИ): профилактика в летний период</div>
-            <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span>Здоровье</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-          </div>
-          <div class="row__date">17.07.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Управление здравоохранения объявляет конкурс по отбору руководителей</div>
-            <div class="row__meta"><span class="status status--draft" data-kk="Жоба">Черновик</span><span>Вакансии</span><span class="lang-tag"><i class="on">RU</i><i>KK</i></span></div>
-          </div>
-          <div class="row__date">17.07.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Круглый стол о вспышке кори в Карагандинской области</div>
-            <div class="row__meta"><span class="status status--wait" data-kk="Жоспарланған">Запланировано</span><span>Здоровье</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-          </div>
-          <div class="row__date">02.07.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Обязательное социально-медицинское страхование: что изменилось</div>
-            <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span>Объявления</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-          </div>
-          <div class="row__date">14.05.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-        <div class="row">
-          <button class="check" role="checkbox" aria-checked="false" aria-label="Выбрать"></button>
-          <div class="row__thumb"></div>
-          <div class="row__main">
-            <div class="row__title">Как лечиться в Казахстане бесплатно: памятка по ГОБМП</div>
-            <div class="row__meta"><span class="status status--ok" data-kk="Жарияланған">Опубликовано</span><span>Здоровье</span><span class="lang-tag"><i class="on">RU</i><i class="on">KK</i></span></div>
-          </div>
-          <div class="row__date">28.04.2025</div>
-          <div class="row__acts">
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Редактировать" data-go="editor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
-            <button class="btn btn--ghost btn--icon" type="button" aria-label="Посмотреть на сайте" data-toast="Демонстрация: предпросмотр недоступен"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="pager">
-        <span class="pager__info" data-kk="199 жазбаның 1–6 көрсетілген">Показаны 1–6 из 199 записей</span>
-        <button type="button" aria-current="true">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <span class="dim">…</span>
-        <button type="button">34</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================================================== РЕДАКТОР -->
-  <section class="view" id="v-editor">
-    <div class="editor">
-
-      <div class="panel">
-        <div class="panel__head">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-          <h2 data-kk="Жаңалық мәтіні">Текст новости</h2>
-          <button class="btn btn--ghost btn--sm" type="button" data-go="news" data-kk="Тізімге оралу">К списку</button>
-        </div>
-
-        <div class="formbody">
-
-          <div>
-            <span class="lbl" data-kk="Мәтін тілі">Язык текста</span>
-            <div class="langtabs">
-              <button type="button" aria-pressed="true">Русский</button>
-              <button type="button" aria-pressed="false">Қазақша</button>
-            </div>
-            <p class="hint" data-kk="Екі тіл де толтырылады. Қазақша нұсқасы болмаса, сайт орысшаны көрсетеді.">Заполняются обе версии. Если казахской нет — сайт покажет русскую.</p>
-          </div>
-
-          <div>
-            <label class="lbl" for="e-title">Заголовок</label>
-            <input class="inp" id="e-title" value="Всемирная неделя осведомлённости об устойчивости к противомикробным препаратам">
-          </div>
-
-          <div>
-            <label class="lbl" for="e-lede">Краткое описание <small data-kk="— тізімде және іздеуде көрінеді">— видно в списке и в поиске</small></label>
-            <textarea class="txa" id="e-lede" rows="2">С 18 по 24 ноября проходит Всемирная неделя осведомлённости об устойчивости к противомикробным препаратам. Рассказываем, почему антибиотики нельзя назначать себе самостоятельно.</textarea>
-          </div>
-
-          <div>
-            <span class="lbl" data-kk="Жаңалық мәтіні">Текст новости</span>
-            <div class="toolbar" role="toolbar" aria-label="Форматирование">
-              <button type="button" aria-label="Полужирный"><b>Ж</b></button>
-              <button type="button" aria-label="Курсив"><i>К</i></button>
-              <button type="button" aria-label="Подчёркнутый"><u>Ч</u></button>
-              <span class="toolbar__sep"></span>
-              <button type="button" aria-label="Заголовок">H2</button>
-              <button type="button" aria-label="Маркированный список"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></button>
-              <button type="button" aria-label="Нумерованный список"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 5.5 5 5v4M4 18h2.5L4 15.5h2.5"/></svg></button>
-              <span class="toolbar__sep"></span>
-              <button type="button" aria-label="Ссылка"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></button>
-              <button type="button" aria-label="Изображение"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m4 17 5-4.5 4.5 4 2.5-2 4 3.5"/></svg></button>
-              <button type="button" aria-label="Файл"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></button>
-              <span class="toolbar__sep"></span>
-              <button type="button" aria-label="Отменить"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v6h6"/><path d="M3.5 13a8 8 0 1 0 2-7"/></svg></button>
-            </div>
-            <div class="rte" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="Текст новости">
-              <p>Каждый год с 18 по 24 ноября во всём мире проходит Неделя осведомлённости об устойчивости к противомикробным препаратам. Её цель — напомнить, что антибиотики перестают работать, если принимать их без назначения врача.</p>
-              <h3>Что такое антибиотикорезистентность</h3>
-              <p>Это способность бактерий выживать под действием препаратов, которые раньше их убивали. Инфекция, которая лечилась за пять дней, начинает требовать госпитализации.</p>
-              <h3>Чего делать нельзя</h3>
-              <ul>
-                <li>назначать антибиотики себе и детям самостоятельно;</li>
-                <li>прерывать курс, как только стало легче;</li>
-                <li>лечить антибиотиками ОРВИ и грипп — они вызваны вирусами;</li>
-                <li>принимать препараты, оставшиеся с прошлого раза.</li>
-              </ul>
-              <p>Если у вас есть вопросы о назначенном лечении, обратитесь к участковому врачу по телефону регистратуры <b>31-07-78</b>.</p>
-            </div>
-            <p class="hint" data-kk="Соңғы сақталуы: 4 минут бұрын · автоматты түрде">Последнее сохранение: 4 минуты назад · автоматически</p>
-          </div>
-
-          <div>
-            <span class="lbl" data-kk="Мұқаба суреті">Обложка</span>
-            <div class="drop">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              <b data-kk="Файлды осында апарыңыз">Перетащите файл сюда</b>
-              <span data-kk="немесе компьютерден таңдаңыз · JPG, PNG, 5 МБ дейін">или выберите с компьютера · JPG, PNG, до 5 МБ</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="savebar">
-          <span class="dim" data-kk="Жоба · жарияланбаған">Черновик · не опубликовано</span>
-          <button class="btn btn--ghost" type="button" data-toast="Демонстрация: предпросмотр недоступен" data-kk="Алдын ала қарау">Предпросмотр</button>
-          <button class="btn btn--primary" type="button" data-toast="Демонстрация: новость не публикуется" data-kk="Жариялау">Опубликовать</button>
-        </div>
-      </div>
-
-      <div>
-        <div class="panel aside-card">
-          <div class="panel__head">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-            <h2 data-kk="Жариялау">Публикация</h2>
-          </div>
-          <div class="aside-body">
-            <div class="meta-line"><span data-kk="Күй">Статус</span><b><span class="status status--draft" data-kk="Жоба">Черновик</span></b></div>
-            <div>
-              <label class="lbl" for="e-date" data-kk="Жариялау күні">Дата публикации</label>
-              <input class="inp" id="e-date" type="date" value="2026-06-15">
-            </div>
-            <div>
-              <label class="lbl" for="e-cat" data-kk="Айдар">Рубрика</label>
-              <select class="sel" id="e-cat">
-                <option>Профилактика</option>
-                <option>Здоровье</option>
-                <option>Объявления</option>
-                <option>Вакансии</option>
-              </select>
-            </div>
-            <label class="switch">
-              <input type="checkbox" checked>
-              <span class="switch__track"></span>
-              <span data-kk="Басты бетте көрсету">Показывать на главной</span>
-            </label>
-            <label class="switch">
-              <input type="checkbox">
-              <span class="switch__track"></span>
-              <span data-kk="Маңызды деп белгілеу">Отметить как важное</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="panel aside-card">
-          <div class="panel__head">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <h2 data-kk="Іздеуде көрінуі">Вид в поиске</h2>
-          </div>
-          <div class="aside-body">
-            <div>
-              <label class="lbl" for="e-slug" data-kk="Беттің мекенжайы">Адрес страницы</label>
-              <input class="inp" id="e-slug" value="nedelya-antibiotikorezistentnosti">
-              <p class="hint">/news/nedelya-antibiotikorezistentnosti</p>
-            </div>
-            <div>
-              <label class="lbl" for="e-desc" data-kk="Іздеу жүйесіне сипаттама">Описание для поисковика</label>
-              <textarea class="txa" id="e-desc" rows="4" style="min-height:96px">Почему антибиотики нельзя назначать себе самостоятельно — памятка Многопрофильной больницы № 1 г. Караганды.</textarea>
-              <p class="hint"><span class="num" id="descCount">0</span> / 160 <span data-kk="таңба">символов</span></p>
-            </div>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -1427,7 +1026,6 @@ svg { flex: 0 0 auto; }
 
         <div class="tree__item"><span class="tree__grip"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span><b>Услуги</b><code>/services</code><span class="row__acts"><button class="btn btn--ghost btn--icon" type="button" aria-label="Изменить" data-toast="Демонстрация: пункт не редактируется"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button></span></div>
         <div class="tree__item"><span class="tree__grip"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span><b>Закупки</b><code>/procurement</code><span class="row__acts"><button class="btn btn--ghost btn--icon" type="button" aria-label="Изменить" data-toast="Демонстрация: пункт не редактируется"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button></span></div>
-        <div class="tree__item"><span class="tree__grip"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span><b>Новости</b><code>/news</code><span class="row__acts"><button class="btn btn--ghost btn--icon" type="button" aria-label="Изменить" data-toast="Демонстрация: пункт не редактируется"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button></span></div>
         <div class="tree__item"><span class="tree__grip"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg></span><b>Контакты</b><code>/contacts</code><span class="row__acts"><button class="btn btn--ghost btn--icon" type="button" aria-label="Изменить" data-toast="Демонстрация: пункт не редактируется"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button></span></div>
       </div>
 
@@ -1460,8 +1058,6 @@ svg { flex: 0 0 auto; }
      --------------------------------------------------------- */
   var TITLES = {
     dash:     ["Главная",              "Басты бет"],
-    news:     ["Новости",              "Жаңалықтар"],
-    editor:   ["Новость",              "Жаңалық"],
     pages:    ["Страницы сайта",       "Сайт беттері"],
     docs:     ["Документы",            "Құжаттар"],
     media:    ["Медиатека",            "Медиатека"],
@@ -1486,11 +1082,8 @@ svg { flex: 0 0 auto; }
       node.setAttribute("data-kk", pair[1]);
     });
 
-    /* Редактор — часть раздела «Новости»: подсветка остаётся на нём,
-       иначе при переходе из списка выделение пропадает. */
-    var active = view === "editor" ? "news" : view;
     document.querySelectorAll(".navitem").forEach(function (b) {
-      if (b.getAttribute("data-go") === active) b.setAttribute("aria-current", "page");
+      if (b.getAttribute("data-go") === view) b.setAttribute("aria-current", "page");
       else b.removeAttribute("aria-current");
     });
 
@@ -1500,7 +1093,7 @@ svg { flex: 0 0 auto; }
        незачем, иначе шапка уезжает и экран выглядит обрезанным. */
     if (!quiet) window.scrollTo({ top: 0, behavior: "auto" });
 
-    /* Адрес экрана в хеше: по ссылке вида …/cms/#editor демонстрация
+    /* Адрес экрана в хеше: по ссылке вида …/cms/#appeals демонстрация
        открывается сразу на нужном месте, и работает кнопка «назад». */
     if (location.hash.slice(1) !== view) history.pushState(null, "", "#" + view);
   }
@@ -1569,24 +1162,10 @@ svg { flex: 0 0 auto; }
     var stub = e.target.closest("[data-toast]");
     if (stub) { say(stub.getAttribute("data-toast")); return; }
 
-    var check = e.target.closest(".check");
-    if (check) {
-      check.setAttribute("aria-checked", check.getAttribute("aria-checked") === "true" ? "false" : "true");
-      return;
-    }
-
     var tab = e.target.closest('[role="tab"]');
     if (tab) {
       tab.parentNode.querySelectorAll('[role="tab"]').forEach(function (t) {
         t.setAttribute("aria-selected", String(t === tab));
-      });
-      return;
-    }
-
-    var langtab = e.target.closest(".langtabs button");
-    if (langtab) {
-      langtab.parentNode.querySelectorAll("button").forEach(function (t) {
-        t.setAttribute("aria-pressed", String(t === langtab));
       });
       return;
     }
@@ -1618,19 +1197,6 @@ svg { flex: 0 0 auto; }
     ["travmpunkt.jpg",        "1400 × 933 · 276 КБ"],
     ["konferenciya.jpg",      "1800 × 1200 · 498 КБ"]
   ];
-
-  /* Счётчик описания считает по-настоящему: в демонстрации это
-     единственное поле, где видно, что интерфейс реагирует на ввод. */
-  var desc = document.getElementById("e-desc");
-  var descCount = document.getElementById("descCount");
-
-  function countDesc() {
-    descCount.textContent = desc.value.length;
-    descCount.style.color = desc.value.length > 160 ? "var(--alert-text)" : "";
-  }
-
-  desc.addEventListener("input", countDesc);
-  countDesc();
 
   var start = location.hash.slice(1);
   if (TITLES[start] && start !== "dash") go(start, true);
